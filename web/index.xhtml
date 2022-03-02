@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+<h:form id="user-form">
+<h:outputLabel for="name">User Name</h:outputLabel><br/>
+<h:inputText validatorMessage="le username doit avoir 5-10 caractéres alphabétique" id="user-name" value="#{user.name}">
+<f:validateLength  minimum="5" maximum="10"/>
+<f:validateRegex pattern="^([a-zA-Z]+(.)?[\s]*)$"></f:validateRegex>
+</h:inputText><br/>
+<h:outputLabel for="name">Age</h:outputLabel><br/>
+
+<h:inputText  id="user-age" value="#{user.age}" validatorMessage="l'age doit être entre 18 et 60">
+    <f:validateDoubleRange minimum="18" maximum="70">
+        
+    </f:validateDoubleRange>
+
+
+</h:inputText>
+<br></br>
+<h:outputLabel for="name">Email</h:outputLabel><br/>
+
+<h:inputText value="#{user.email}" validatorMessage="le email est obligatoire">
+
+    <f:validateRequired></f:validateRequired>
+
+</h:inputText>
+
+
+<h:commandButton value="OK" ></h:commandButton>
+</h:form>    </h:body>
+</html>
+
